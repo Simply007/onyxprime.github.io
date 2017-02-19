@@ -3,7 +3,7 @@ layout: post
 title: Why Am I Doing This!
 ---
 
-For years now, I've been wanting to start blogging. I've come up with numerous excuses as to why I'm not blogging.
+For years now, I've been wanting to build a website and start a blog. I've come up with numerous excuses as to why I haven't:
 
 - *I don't have time.*
 - *I don't even know how to write a blog.*
