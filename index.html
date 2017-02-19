@@ -1,10 +1,19 @@
 ---
 layout: default
-title: Ryan Overton
 ---
 
-<h2>Welcome</h2>
+<div class="posts">
+  {% for post in site.posts %}
+    <article class="post">
 
-<p>
-    My name is Ryan Overton. I'm a software developer with 10 years of professional experience with Microsoft technologies. I have learned a breadth of development technologies for desktop (WinForms, WPF, UWA, and UWP), web (WebForms, MVC, AngularJs, and Angular 2), and mobile (Windows CE, Windows Mobile, Windows Phone 7/8/8.1, and Xamarin). Since I first made the turtle dance around the screen using Logo, I have had a passion for development and am fortunate I get to do what I love for a living.
-</p>
+      <h1><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h1>
+
+      <div class="entry">
+        {{ post.excerpt }}
+      </div>
+
+      <a href="{{ site.baseurl }}{{ post.url }}" class="read-more">Read More</a>
+    </article>
+  {% endfor %}
+</div>
+
