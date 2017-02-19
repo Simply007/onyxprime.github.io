@@ -2,14 +2,18 @@
 layout: default
 ---
 
-<h2>Blog</h2>
-<div class="posts">
-  {% for post in site.posts %}
-    <article class="post">
-
-      <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-      <h6>{{ post.date | date: "%B %e, %Y" }}</h6>
-    </article>
-  {% endfor %}
+<div class=".col-md-6">
+    <h2>Blog</h2>
+    <div class="posts">
+    {% for post in site.posts %}
+        <article class="post">
+        <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
+        <h6>{{ page.date | date: "%B %e, %Y" }}</h6>
+        </article>
+    {% endfor %}
+    </div>
+</div>
+<div class=".col-md-6">
+    <h2>Speaking</h2>
 </div>
 
