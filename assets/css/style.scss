@@ -2,6 +2,8 @@
 ---
 
 @import "{{ site.theme }}";
-
+.main-post-title{
+    font-size: 1.75rem;
+}
 @import "svg-icons";
 @import "bootstrap";
