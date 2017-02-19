@@ -8,7 +8,7 @@ layout: default
     <article class="post">
 
       <h3><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></h3>
-      <h6>{{ page.date | date: "%B %e, %Y" }}</h6>
+      <h6>{{ post.date | date: "%B %e, %Y" }}</h6>
     </article>
   {% endfor %}
 </div>
