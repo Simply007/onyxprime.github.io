@@ -10,11 +10,9 @@
 }
 .nav-left-side{
     margin-left: 150px;
-    justify-content: flex-start;
 }
 .nav {
-    display:flex;
-    flex-direction: row;
+    
 }
 .nav a {
     color:darkslategray;
@@ -23,11 +21,19 @@
     color:darkred;
     text-decoration: none;
 }
-
+.nav-left{
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+.nav-right{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
 .nav-right-side{
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
 }
 .page-header{
     background-image: linear-gradient(0deg, #3c25ff, #000000);
