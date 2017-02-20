@@ -8,7 +8,10 @@
 .main-post-date{
     font-size: 1rem;
 }
-.nav-left-side{
+.nav{
+    height: 50px;
+}
+.nav-left-side a{
     padding-left: 150px;
 }
 .nav a {
@@ -33,7 +36,6 @@
     display: flex;
     flex-direction: row;
 }
-
 .nav-right-side a{
     margin-left: 10px;
     margin-right: 10px;
@@ -41,7 +43,6 @@
 .page-header{
     background-image: linear-gradient(0deg, #3c25ff, #000000);
 }
-
 .main-content{
     background-color: white;
 }
