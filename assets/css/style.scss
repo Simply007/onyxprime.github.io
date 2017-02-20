@@ -8,5 +8,18 @@
 .main-post-date{
     font-size: 1rem;
 }
+.nav-left-side{
+    margin-left: 150;
+}
+
+.nav-left-side a {
+    color:darkslategray;
+}
+.nav-left-side a:hover{
+    color:darkred;
+}
+.page-header{
+    background-image: linear-gradient(0deg, #3c25ff, #000000);
+}
 @import "svg-icons";
 @import "bootstrap";
