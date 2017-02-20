@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Why Am I Doing This!
+comments: true
 ---
 
 For years now, I've been wanting to build a website and start a blog. I've come up with numerous excuses as to why I haven't:
