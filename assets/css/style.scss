@@ -19,8 +19,17 @@
     color:darkred;
     text-decoration: none;
 }
+
+.nav-right-side{
+    display: flex;
+    flex-direction: row;
+}
 .page-header{
     background-image: linear-gradient(0deg, #3c25ff, #000000);
+}
+
+.main-content{
+    background-color: white;
 }
 
 body{
