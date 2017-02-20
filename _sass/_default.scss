@@ -4,9 +4,6 @@ $screen-sm-min: 768px;
     height: 50px;
     align-items:center;
 }
-.nav-left-side a{
-    padding-left: 150px;
-}
 .nav a {
     color:darkslategray;
 }
@@ -25,7 +22,6 @@ $screen-sm-min: 768px;
     justify-content: center;
 }
 .nav-right-side{
-    padding-right: 100px;
     display: flex;
     flex-direction: row;
 }
@@ -38,6 +34,13 @@ $screen-sm-min: 768px;
 }
 
 @media (min-width: $screen-sm-min) { 
+    .nav-left-side a{
+        padding-left: 150px;
+    }
+
+    .nav-right-side{
+        padding-right: 100px;
+    }
     .nav-left{
         display:flex;
         justify-content: flex-start;
