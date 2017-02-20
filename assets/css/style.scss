@@ -3,11 +3,13 @@
 
 @import "{{ site.theme }}";
 
-@import "bootstrap";
+$screen-sm-min: 768px;
+
 @import "default";
 @import "blog";
 @import "main";
 @import "svg-icons";
+@import "bootstrap";
 
 body{
     background-color: lightgray !important; 
