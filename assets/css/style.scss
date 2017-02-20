@@ -3,11 +3,11 @@
 
 @import "{{ site.theme }}";
 
+@import "bootstrap";
 @import "default";
 @import "blog";
 @import "main";
 @import "svg-icons";
-@import "bootstrap";
 
 body{
     background-color: lightgray !important; 

@@ -7,3 +7,12 @@
 .main-content{
     background-color: white;
 }
+.main-col{
+    margin-bottom: 50px;
+}
+
+@media (min-width: $screen-sm-min) { 
+    .main-col{
+        margin-bottom: 0px;
+    }
+}
