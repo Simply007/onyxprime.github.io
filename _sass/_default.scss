@@ -1,0 +1,36 @@
+.nav{
+    height: 50px;
+    align-items:center;
+}
+.nav-left-side a{
+    padding-left: 150px;
+}
+.nav a {
+    color:darkslategray;
+}
+.nav a:hover{
+    color:darkred;
+    text-decoration: none;
+}
+.nav-left{
+    display:flex;
+    justify-content: flex-start;
+    flex-direction: row;
+}
+.nav-right{
+    display:flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.nav-right-side{
+    padding-right: 100px;
+    display: flex;
+    flex-direction: row;
+}
+.nav-right-side a{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.page-header{
+    background-image: linear-gradient(0deg, #3c25ff, #000000);
+}
