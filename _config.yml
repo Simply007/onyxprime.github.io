@@ -1,6 +1,8 @@
 theme: jekyll-theme-cayman
 title: Ryan Overton
 description: Avid software developer and part-time Code-Merc
+github: 
+    is_project_page: false
 
 # Includes an icon in the footer for each username you enter
 footer-links:

@@ -1,3 +1,5 @@
-
+.DS_Store
 assets/css/.DS_Store
 Gemfile
+Gemfile.*
+_site
