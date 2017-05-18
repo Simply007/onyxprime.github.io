@@ -25,7 +25,14 @@ Last week, I was watching a talk by Bo-ying Fu, Program Manager at Microsoft, [A
 
 ### What do I get out of DevOps?
 
+One of the biggest reasons, in my opinion, to switch to a DevOps model of software development is to reduce the steps and knwoledge it takes to get into production. 
 
+### How do I get started 
 
- 
+The million dollar question, how do I get started? While the DevOps process can seem overwhelming, it's not all or nothing. Starting with one of the practices listed earlier in the article, you can start reaping the rewards of DevOps. I recommend starting with implementing a continuous integration process. This will help to quickly resolve the "Works on my machine" issue I've found prevalent in the workplace today.
 
+Contiuous Integration involves setting up source control and automatic code builds on a machine different than the machine the code was developed. This ensures anything done to get the application to run on the developers machine, exists in source control, and not solely on the developers machine. There are numerous times I've opened code developed by me, or someone else, which hasn't been touched in months or years, and spent numerous hours, or days, getting it to build because the previous developer built and deployed the application from there development machine.
+
+Once you have the first practice implemented, move on to the next practice. Build upon your success with the first practice. Don't let the momentum on your DevOps journey slow, or halt. It will be that much harder to get the process started again. Evangelize your success with other groups. This will further drive the adoption of DevOps across your organization.
+
+One of the more difficult practices I've found to implement, with management and teams, is Agile. Agile requires everyone to take everything they know about the software development process and flip it on its head. On the manaagement side, program/project managers, want to know when can we deliver each feature or product. Developers tend to over architect and build what's not needed, while Agile teaches you to write the minimum amount of code to implement the feature. 
