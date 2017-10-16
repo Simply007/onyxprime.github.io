@@ -1,23 +1,21 @@
----
-layout: default
----
+--- layout: default ---
 <div class="row">
     <div class="col-md-6 main-col">
         <h2>Blog</h2>
         <div class="posts">
-        {% for post in site.posts %}
+            {% for post in site.posts %}
             <article class="post">
-            <div class="main-post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
-            <div class="main-post-date">{{ post.date | date: "%B %e, %Y" }}</div>
+                <div class="main-post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
+                <div class="main-post-date">{{ post.date | date: "%B %e, %Y" }}</div>
             </article>
-        {% endfor %}
+            {% endfor %}
         </div>
     </div>
     <div class="col-md-6 main-col">
         <h2>Speaking</h2>
         <ul>
             <li><a href="http://nwatechfest.com/">NWA TechFest - 5/18/2017</a></li>
+            <li><a href="http://devupconf.org/">dev up - 10/16-18/2017</a></li>
         </ul>
     </div>
 </div>
-
