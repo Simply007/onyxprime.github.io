@@ -4,9 +4,15 @@ title: "Feature Flags: Get your code out now - Part 2"
 comments: true
 ---
 
-## Implementing Feature Flags
+### Implementing Feature Flags Client-side
 
-In the previous post, [Feature Flags - Part 1]({% post_url 2017-10-30-Feature-Flags-Part-1 %}), we learned about what feature flags are, their benefits and dangers. This post will explain how you can implement feature flags in to your own applications.
+* [Feature Flags - Part 1 (Overview)]({% post_url 2017-10-30-Feature-Flags-Part-1 %})
+* Feature Flags - Part 2 (Client-side implementation)
+* Feature Flags - Part 3 (Server-side implementation)
+
+[Sample code](https://github.com/OnyxPrime/FeatureFlagsDemo)
+
+In the previous post, [Feature Flags - Part 1]({% post_url 2017-10-30-Feature-Flags-Part-1 %}), we learned about what feature flags are, their benefits and dangers. This post will explain how you can implement feature flags in to the client-side of your own applications.
 
 Implementing feature flags requires you to create a divergence in your logic where the new functionality will be called, rather than modifying the existing functionality to meet the requirements of the new feature.
 
@@ -18,7 +24,7 @@ Implementing feature flags requires you to create a divergence in your logic whe
 
 At this divergence we create a decision point, which redirects the users flow through the application based on the value of the feature flag. 
 
-The sample code below uses a flag to determine whether or not to call a web API to retrieve a list of characters, or return a static list of predefined characters.
+The sample code below uses a flag to determine whether or not to call a web API to retrieve a list of characters, or return a static list of predefined characters. Although the code is written in TypeScript, the concepts can be carried on to other client-side languages.
 
 ```typescript
 getAllCharacters(): Observable<string[]> {
@@ -78,5 +84,52 @@ export class FeatureFlagService {
   }
 ```
 
-[Sample code](https://github.com/OnyxPrime/FeatureFlagsDemo)
+With feature flags, we want to be as explicit as possible when implementing them in order to ensure clear understanding of what the code is doing. The code below defines the explicit flags we care about and defaults them to false. This prevents any accidental release of features before the application can get the actual values from the service provider.
+
+```typescript
+this.flags = {'ln-search': false, 'ln-api': false};
+```
+
+We then initialize our connection to the feature flag service provider. Here we are utilizing [LaunchDarkly](https://launchdarkly.com) as our service provider and configure it for an anonymouse user. If at the point of initialization, the user is know, then we would go ahead and pass it in to the service initialization.
+
+If we intend to serve both unauthenticated and authenticated users, we can utilize the code below to change the user configured during initialization.
+
+```typescript
+changeUser(user) {
+    if (user !== 'Anonymous') {
+    this.ldClient.identify({key: user, name: user, anonymous: false});
+    } else {
+    this.ldClient.identify({key: 'anon', anonymous: true});
+    }
+};
+```
+Once our client is initialized, we want to ensure we call the service to obtain the correct value settings for our user, and notify any subscribers.
+
+```typescript
+flagChange: Subject<Object> = new Subject<Object>();
+
+this.ldClient.on('ready', () => {
+    this.setFlags();
+});
+
+setFlags() {
+    this.flags = this.ldClient.allFlags();
+    this.flagChange.next(this.flags);
+};
+```
+
+We also don't want to require our users to refresh or restart the application in order to gain access to new features. We can subscribe to an event provided by our service provider, or if they don't provide this feature, implement polling logic to notify us when the value of a feature flag we care about changes, and notify any subscribers to our event.
+
+```typescript
+this.ldClient.on('change', (flags => {
+    if (flags['ln-search'] !== undefined) {
+        this.flags['ln-search'] = flags['ln-search'].current;
+    }
+    if (flags['ln-api'] !== undefined) {
+        this.flags['ln-api'] = flags['ln-api'].current;
+    }
+
+    this.flagChange.next(this.flags);
+}));
+```
 

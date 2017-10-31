@@ -4,6 +4,10 @@ title: "Feature Flags: Get your code out now - Part 1"
 comments: true
 ---
 
+* Feature Flags - Part 1 (Overview)
+* [Feature Flags - Part 2 (Client-side implementation)]({% post_url 2017-10-30-Feature-Flags-Part-2 %})
+* Feature Flags - Part 3 (Server-side implementation)
+
 As many teams and organizations begin to transform the way they plan, build and deliver software, as well as, obtain feedback and iterate, they begin to adopt new practices to aide in this transformation. Automating build and release pipelines has increased the efficiency and stability of releasing our software, but how can we ensure we can continually release and deliver new features and fixes without destabalizing the entire application. This is where feature flags come in to play.
 
 Most of us have most likely used feature flags previously, we just never called it a feature flag. A Feature Flag is simply a way to turn functionality on or off, most likely through a configuration setting, without the need to deploy new code. To utilize the feature flag, we create a divergence in our code, directing users down the new path or the old path based on the flag setting, rather than replacing the existing logic. We'll explore this more in the implementation section in [part 2]({% post_url 2017-10-30-Feature-Flags-Part-2 %}) of this post.
