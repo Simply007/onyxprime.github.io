@@ -4,11 +4,9 @@ title: "Feature Flags: Get your code out now - Part 1"
 comments: true
 ---
 
-# Feature Flags - Part 1
-
 As many teams and organizations begin to transform the way they plan, build and deliver software, as well as, obtain feedback and iterate, they begin to adopt new practices to aide in this transformation. Automating build and release pipelines has increased the efficiency and stability of releasing our software, but how can we ensure we can continually release and deliver new features and fixes without destabalizing the entire application. This is where feature flags come in to play.
 
-Most of us have most likely used feature flags previously, we just never called it a feature flag. A Feature Flag is simply a way to turn functionality on or off, most likely through a configuration setting, without the need to deploy new code.
+Most of us have most likely used feature flags previously, we just never called it a feature flag. A Feature Flag is simply a way to turn functionality on or off, most likely through a configuration setting, without the need to deploy new code. To utilize the feature flag, we create a divergence in our code, directing users down the new path or the old path based on the flag setting, rather than replacing the existing logic. We'll explore this more in the implementation section in [part 2]({% post_url 2017-10-30-Feature-Flags-Part-2 %}) of this post.
 
 ## Benefits of feature flags
 
@@ -42,4 +40,4 @@ While building a simple feature flag system isn't overly complex, you need to as
 
 I would recommend starting out with one of a SaaS provider and down the road reevaluate this decision if the need arises for additional functionality. You may be able to partner with the SasS provider to get this new functioanlity, saving the costs of an internal system.
 
-Check out [Feature Flags - Part 2]({% post_url 2017-10-30-Feature-Flags-Part-2 %})
+Check out [Feature Flags - Part 2]({% post_url 2017-10-30-Feature-Flags-Part-2 %}) to learn how to implement feature flags.
