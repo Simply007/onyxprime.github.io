@@ -10,9 +10,9 @@ In the previous post, [Feature Flags - Part 1]({% post_url 2017-20-30-Feature-Fl
 
 Implementing feature flags requires you to create a divergence in your logic where the new functionality will be called, rather than modifying the existing functionality to meet the requirements of the new feature.
 
+[Feature flag scenario]({{ "/assets/post_images/feature-flag-scenarios.png" | absolute_url }})
 
-
-```typescript
+```csharp
 constructor(private ff: FeatureFlagService, private http: Http) {
     this.useWebApi = ff.flags['ln-api'];
 
