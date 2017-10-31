@@ -3,3 +3,4 @@ assets/css/.DS_Store
 Gemfile
 Gemfile.*
 _site
+.sass-cache

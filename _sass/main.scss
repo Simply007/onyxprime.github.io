@@ -4,13 +4,22 @@
     font-size: 1rem;
 }
 .main-post-title{
-    font-size: 2rem;
+    font-size: 1.25rem;
 }
 .main-post-date{
     font-size: .75rem;
 }
 .main-col{
     margin-bottom: 50px;
+}
+
+.image-wrapper {
+    text-align: center;
+
+    .image-caption {
+        color: grey;
+        margin-top: 5px;
+    }
 }
 
 @media (min-width: $screen-sm-min) { 
