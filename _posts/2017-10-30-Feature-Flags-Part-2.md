@@ -22,7 +22,7 @@ Implementing feature flags requires you to create a divergence in your logic whe
             caption="Feature Flag Scenarios" %}
 
 
-At this divergence we create a decision point, which redirects the users flow through the application based on the value of the feature flag. 
+At this divergence we create a decision point, which redirects the users flow through the application based on the value of the feature flag. In the image above, I show 3 code flows. The first is the current path. The second is a simple decision point where we have an entirely new flow which does not reuse any previous code. The third shows a more complex flow where we reuse some code, business logic perhaps, and have more than one decision point, as the flow progresses.
 
 The sample code below uses a flag to determine whether or not to call a web API to retrieve a list of characters, or return a static list of predefined characters. Although the code is written in TypeScript, the concepts can be carried on to other client-side languages.
 
