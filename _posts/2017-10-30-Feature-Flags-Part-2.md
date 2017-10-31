@@ -8,7 +8,7 @@ comments: true
 
 * [Feature Flags - Part 1 (Overview)]({% post_url 2017-10-30-Feature-Flags-Part-1 %})
 * Feature Flags - Part 2 (Client-side implementation)
-* [Feature Flags - Part 3 (Server-side implementation)]({% post_url 2017-10-31-Feature-Flags-Part-3 %})
+* Feature Flags - Part 3 (Server-side implementation)
 
 [Sample code](https://github.com/OnyxPrime/FeatureFlagsDemo)
 

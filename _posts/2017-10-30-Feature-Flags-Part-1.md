@@ -6,7 +6,7 @@ comments: true
 
 * Feature Flags - Part 1 (Overview)
 * [Feature Flags - Part 2 (Client-side implementation)]({% post_url 2017-10-30-Feature-Flags-Part-2 %})
-* [Feature Flags - Part 3 (Server-side implementation)]({% post_url 2017-10-31-Feature-Flags-Part-3 %})
+* Feature Flags - Part 3 (Server-side implementation)
 
 As many teams and organizations begin to transform the way they plan, build and deliver software, as well as, obtain feedback and iterate, they begin to adopt new practices to aide in this transformation. Automating build and release pipelines has increased the efficiency and stability of releasing our software, but how can we ensure we can continually release and deliver new features and fixes without destabalizing the entire application. This is where feature flags come in to play.
 
