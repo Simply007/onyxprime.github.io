@@ -6,7 +6,7 @@ comments: true
 
 * Feature Flags - Part 1 (Overview)
 * [Feature Flags - Part 2 (Client-side implementation)]({% post_url 2017-10-30-Feature-Flags-Part-2 %})
-* Feature Flags - Part 3 (Server-side implementation)
+* [Feature Flags - Part 3 (Server-side implementation)]({% post_url 2017-10-31-Feature-Flags-Part-3 %})
 
 As many teams and organizations begin to transform the way they plan, build and deliver software, as well as, obtain feedback and iterate, they begin to adopt new practices to aide in this transformation. Automating build and release pipelines has increased the efficiency and stability of releasing our software, but how can we ensure we can continually release and deliver new features and fixes without destabalizing the entire application. This is where feature flags come in to play.
 
@@ -32,7 +32,7 @@ With all the benefits we gain from utilizing feature flags, comes great responsi
 
 One way I've seen suggested is to create a parallel branch with the code being replaced removed. The idea is the developers have intimate knowledge of the code being replaced and is the ideal time to remove it. When the code reaches 100% usage then you merge the "clean" code into the main branch. This does require you to maintain 2 code bases until the feature has reached entropy.
 
-Another danger is feature flag reuse. You should never reuse a previously used feature flag because you could accidentally turn on a previously deprecated feature, or poor performing feature, which may have not been properly removed. Knight Capital, a trading firm managing billions of trades worth billions of dollars... daily. They were in the process of replacing the existing engine, deploying the new code manually to their servers (8 in all) over a 5 day period. Unfortunately, the one of the servers was missed and still contained the old code. When the flag was triggered, 7 of the servers functioned as expected and the 8th server began running the deprecated code. In about 45 minutes, the company incurred a $465 million loss and with only $365 million in cash and equivalents, became bankrupt. Read [Knightmare: A DevOps Cautionary Tale](https://dougseven.com/2014/04/17/knightmare-a-devops-cautionary-tale/) to learn more about the incident and some lessons learned.
+Another danger is feature flag reuse. You should never reuse a previously used feature flag because you could accidentally turn on a previously deprecated feature, or poor performing feature, which may have not been properly removed. Knight Capital, a trading firm managing billions of trades worth billions of dollars daily. They were in the process of replacing the existing engine, deploying the new code manually to their servers (8 in all) over a 5 day period. Unfortunately, one of the servers was missed and still contained the old code. When the flag was triggered, 7 of the servers functioned as expected and the 8th server began running the deprecated code. In about 45 minutes, the company incurred a $465 million loss and with only $365 million in cash and equivalents, became bankrupt. Read [Knightmare: A DevOps Cautionary Tale](https://dougseven.com/2014/04/17/knightmare-a-devops-cautionary-tale/) to learn more about the incident and some lessons learned.
 
 The reason I mention the Knight Capital incident is not to scare you away from feature flags, but to bring to light the need and importance of managing our technical debt in a timely manner. It is important to also understand any code change could experience this type of incident if we don't manage our technical debt.
 
@@ -42,6 +42,6 @@ Some of the feature flagging services, like [LaunchDarkly](https://launchdarkly.
 
 While building a simple feature flag system isn't overly complex, you need to ask yourself what business do you want to be in and estimate the cost accordingly. Maintaing your own system means as business changes, upgrades may be necessary and accounted for with new initiatives and development language support. 
 
-I would recommend starting out with one of a SaaS provider and down the road reevaluate this decision if the need arises for additional functionality. You may be able to partner with the SasS provider to get this new functioanlity, saving the costs of an internal system.
+I would recommend starting out with a SaaS provider and down the road reevaluate this decision if the need arises for additional functionality. You may be able to partner with the SasS provider to get this new functioanlity, saving the costs of an internal system.
 
 Check out [Feature Flags - Part 2]({% post_url 2017-10-30-Feature-Flags-Part-2 %}) to learn how to implement feature flags.
