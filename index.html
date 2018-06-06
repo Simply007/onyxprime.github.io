@@ -10,19 +10,34 @@ title: Home
             {% for post in site.posts %}
             <article class="post">
                 <div class="main-post-title"><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></div>
-                <div class="main-post-date">{{ post.date | date: "%B %e, %Y" }}</div>
+                <p class="main-post-date">{{ post.date | date: "%B %e, %Y" }}</p>
             </article>
             {% endfor %}
         </div>
     </div>
     <div class="col-md-6 main-col">
         <h2>Speaking</h2>
-        <ul>
-            <li><a href="https://www.thatconference.com/">That Conference - August 6-8, 2018</a></li>
-            <li><a href="https://www.kcdc.info/">KCDC X - July 11-13, 2018</a></li>
-            <li><a href="https://nwatechfest.com/">NWA TechFest - May 17, 2018</a></li>
-            <li><a href="https://nwatechfest.com/">NWA TechFest - May 18, 2017</a></li>
-            <li><a href="https://devupconf.org/">dev up - October 16-18, 2017</a></li>
+        <ul class="speaking">
+            <li>
+                <a class="main-speak-event" href="https://www.thatconference.com/">That Conference</a>
+                <p class="main-speak-date"><i>Wisconsin Dells, WI</i>, August 6-8, 2018</p>
+            </li>
+            <li>
+                <a class="main-speak-event" href="https://www.kcdc.info/">KCDC X</a>
+                <p class="main-speak-date"><i>Kansas City, MO</i>, July 11-13, 2018</p>
+            </li>
+            <li>
+                <a class="main-speak-event" href="https://nwatechfest.com/">NWA TechFest</a>
+                <p class="main-speak-date"><i>Fayetteville, AR</i>, May 17, 2018</p>
+            </li>
+            <li>
+                <a class="main-speak-event" href="https://devupconf.org/">dev up</a>
+                <p class="main-speak-date"><i>St. Louis, MO</i>, October 16-18, 2017</p>
+            </li>
+            <li>
+                <a class="main-speak-event" href="https://nwatechfest.com/">NWA TechFest</a>
+                <p class="main-speak-date"><i>Fayetteville, AR</i>, May 18, 2017</p>
+            </li>
         </ul>
     </div>
 </div>
