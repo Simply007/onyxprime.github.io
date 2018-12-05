@@ -32,7 +32,8 @@
     margin-right: 10px;
 }
 .page-header{
-    background-image: url('assets/main_images/binary_wallpaper_green_1500_1000.jpg');
+    background-image: url('/assets/main_images/binary_wallpaper_green_1500_1000.jpg');
+    background-size: 'cover';
 }
 
 @media (min-width: $screen-sm-min) { 
