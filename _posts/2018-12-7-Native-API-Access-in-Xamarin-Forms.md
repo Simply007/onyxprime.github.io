@@ -1,6 +1,7 @@
 ---
 layout: post
 title: Native API Access in Xamarin.Forms
+summary: My contribution to the 2018 C# Advent Calendar
 comments: true
 ---
 
