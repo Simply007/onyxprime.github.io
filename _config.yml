@@ -1,9 +1,11 @@
 theme: jekyll-theme-cayman
 title: Developers Garage
 description: Exploring cool tech, dev practices and tools used in development
+twitter: ryano9791
+author: Ryan Overton
 github: 
     is_project_page: false
-
+title_image: https://onyxprime.github.io/assets/me_small.png
 # Includes an icon in the footer for each username you enter
 footer-links:
   dribbble:
