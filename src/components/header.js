@@ -17,8 +17,10 @@ const Header = ({ siteTitle }) => (
             <div style={{ marginLeft: `4rem`, 
                         fontSize: `1.1rem`, fontFamily: `-apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif`,
                         color: `darkslategray`, fontWeight: `bold`}}>
+              <Link to="/" style={{textDecoration: `none`, color: `darkslategray`, fontStyle: `none`}}>
               <img style={{height: `42px`, verticalAlign: `middle`, marginBottom: `0`}} src={`./me_small.png`} />
               Ryan Overton
+              </Link>
             </div>
           </div>
           <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-6 mdc-layout-grid__cell--align-middle">
@@ -51,8 +53,7 @@ const Header = ({ siteTitle }) => (
     <div
       style={{
         margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
+        padding: `3rem 4rem`,
         backgroundImage: `url(./binary_wallpaper_green_1500_1000.jpg)`,
       }}
     >

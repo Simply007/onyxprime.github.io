@@ -27,6 +27,18 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    {
+      resolve: `@kentico/gatsby-source-kontent`,
+      options: {
+        deliveryClientConfig: {
+          projectId: `6fa0f6a9-d7ae-00fb-69ee-0a0b5afad852`,
+          typeResolvers: []
+         },
+         languageCodenames: [
+           `default`,
+         ]
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
