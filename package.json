@@ -6,6 +6,7 @@
   "author": "Kyle Mathews <mathews.kyle@gmail.com>",
   "dependencies": {
     "@kentico/gatsby-source-kontent": "^5.0.0",
+    "axios": "^0.19.2",
     "dateformat": "^3.0.3",
     "gatsby": "^2.19.45",
     "gatsby-image": "^2.2.44",
