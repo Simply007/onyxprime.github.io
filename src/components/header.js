@@ -19,7 +19,7 @@ const Header = ({ siteTitle }) => (
                         color: `darkslategray`, fontWeight: `bold`}}>
               <Link to="/" style={{textDecoration: `none`, color: `darkslategray`, fontStyle: `none`}}>
               <img style={{height: `42px`, verticalAlign: `middle`, marginBottom: `0`}} src={`/me_small.png`} />
-              Ryan Overton
+              Ondřej Chrastina 🥑
               </Link>
             </div>
           </div>
