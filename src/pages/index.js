@@ -1,54 +1,47 @@
 import React from "react"
 import Layout from "../components/layout"
+import { Link, graphql } from "gatsby"
+import dateformat from "../../node_modules/dateformat/lib/dateformat"
 
-const IndexPage = () => (
+function getFormattedValue(start, end){              
+  let start_date = new Date(start);
+    let end_date = new Date(end);        
+    let event_date = "Not the same";
+    if (start_date.getTime() === end_date.getTime()){
+      event_date = dateformat(start_date, "mmmm dd, yyyy")      
+    }
+    else {
+      event_date = dateformat(start_date, "mmmm dd-" ) + dateformat(end_date, "dd, yyyy")
+    }
+
+    return event_date
+}
+const IndexPage = ({ data }) => (
   <Layout>
     <div className="mdc-layout-grid">
       <div className="mdc-layout-grid__inner"> 
           <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
             <h2 style={{color: `#159957`, fontWeight: `normal`, fontSize: `2rem`}}>Blog</h2>
             <ul style={{listStyleType: `none`, margin: `0`, padding: `0`}}>
-              <li>
-                  <a style={{fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`}} href="https://www.meetup.com/TulsaDevelopers-net/events/cjkrmlyxmbhc/">Native API Access in Xamarin.Forms</a>
-                  <p style={{fontSize: `.75rem`}}>December 7, 2018</p>
-              </li>
-              <li>
-                  <a style={{fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`}} href="http://techfests.com/Tulsa/2018/default.aspx">Feature Flags: Get your code out now - Part 2</a>
-                  <p style={{fontSize: `.75rem`, color: `#0275d8`, textDecoration: `none`}}>October 30, 2017</p>
-              </li>
-              <li>
-                  <a style={{fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`}} href="https://www.kcdc.info/">Feature Flags: Get your code out now - Part 1</a>
-                  <p style={{fontSize: `.75rem`}}>October 30, 20178</p>
-              </li>
+              {data.allKontentItemBlog.edges.map(({ node }) => (
+                <li>
+                <Link style={{fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`}} to={node.fields.slug}>
+                  <h3 style={{fontFamily: `"-apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"`, fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`, marginBottom: `0`, fontWeight: `normal`}} href="">{node.elements.blog_title.value}</h3>
+                  <p style={{fontFamily: `"-apple-system, system-ui, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif"`, fontSize: `.75rem`, fontStyle: `italic`}}>{node.elements.publish_date.value}</p>   
+                </Link>               
+                </li>
+              ))}
             </ul>
           </div>
           <div className="mdc-layout-grid__cell mdc-layout-grid__cell--span-6">
           <h2 style={{color: `#159957`, fontWeight: `normal`, fontSize: `2rem`}}>Speaking</h2>
-          <ul style={{listStyleType: `none`, margin: `0`, padding: `0`}}>
-            <li>
-                <a style={{fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`}} href="https://www.meetup.com/TulsaDevelopers-net/events/cjkrmlyxmbhc/">Tulsa .NET User Group</a>
-                <p style={{fontSize: `.75rem`}}><i>Tulsa, OK</i>, September 25, 2018</p>
-            </li>
-            <li>
-                <a style={{fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`}} href="http://techfests.com/Tulsa/2018/default.aspx">Tulsa TechFest</a>
-                <p style={{fontSize: `.75rem`, color: `#0275d8`, textDecoration: `none`}}><i>Tulsa, OK</i>, July 20, 2018</p>
-            </li>
-            <li>
-                <a style={{fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`}} href="https://www.kcdc.info/">KCDC X</a>
-                <p style={{fontSize: `.75rem`}}><i>Kansas City, MO</i>, July 11-13, 2018</p>
-            </li>
-            <li>
-                <a style={{fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`}} href="https://nwatechfest.com/">NWA TechFest</a>
-                <p style={{fontSize: `.75rem`}}><i>Fayetteville, AR</i>, May 17, 2018</p>
-            </li>
-            <li>
-                <a style={{fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`}} href="https://devupconf.org/">dev up</a>
-                <p style={{fontSize: `.75rem`}}><i>St. Louis, MO</i>, October 16-18, 2017</p>
-            </li>
-            <li>
-                <a style={{fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`}} href="https://nwatechfest.com/">NWA TechFest</a>
-                <p style={{fontSize: `.75rem`}}><i>Fayetteville, AR</i>, May 18, 2017</p>
-            </li>
+          <ul style={{listStyleType: `none`, margin: `0`, padding: `0`}}>            
+            {data.allKontentItemSpeakingEngagements.edges.map(({ node }) => (
+              <li>
+                <a style={{fontSize: `1.25rem`, color: `#0275d8`, textDecoration: `none`}} href={node.elements.link_to_event_site.value}>{node.elements.name_of_event.value}</a>
+                <p style={{fontSize: `.75rem`}}><i>{node.elements.location.value}</i>, {getFormattedValue(node.elements.start_date_of_event.value, node.elements.end_date_of_event.value)} </p>
+              </li>                
+            ))}
           </ul>
           </div>
         </div>                
@@ -89,3 +82,50 @@ const IndexPage = () => (
 )
 
 export default IndexPage
+
+export const query = graphql`
+query MyQuery {
+  allKontentItemBlog {
+    edges {
+      node {
+        id
+        elements {
+          blog_title {
+            value
+          }
+          publish_date {
+            value(formatString: "MMMM DD, YYYY")
+          }
+        }
+        fields{
+          slug
+        }
+      }
+    }
+  }
+  allKontentItemSpeakingEngagements {
+    edges {
+      node {
+        id
+        elements {
+          location {
+            value
+          }
+          name_of_event {
+            value
+          }
+          start_date_of_event {
+            value(formatString: "MM/DD/YYYY")
+          }
+          end_date_of_event {
+            value(formatString: "MM/DD/YYYY")
+          }
+          link_to_event_site {
+            value
+          }
+        }
+      }
+    }
+  }
+}
+`
