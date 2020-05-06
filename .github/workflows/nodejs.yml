@@ -6,6 +6,8 @@ name: Website Build
 on:
   push:
     branches: [ gatsby-rewrite ]
+  repository_dispatch:
+    types: [ kontent_publish ]
 
 jobs:
   build:
